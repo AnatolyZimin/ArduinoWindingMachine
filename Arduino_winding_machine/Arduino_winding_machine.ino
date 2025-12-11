@@ -1,3 +1,4 @@
+#include "display_nokia5110.h"
 /* Name: Winding machine
    Description: Arduino ATmega 328P + Stepper motor control CNC Shield v3 + 2004 LCD + Encoder KY-040
 

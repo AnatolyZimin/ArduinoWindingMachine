@@ -1,4 +1,8 @@
 #pragma once
+#define LCD_TYPE_HD44780 1
+#define LCD_TYPE_NOKIA5110 2
+#define LCD_TYPE LCD_TYPE_NOKIA5110
+
 // сохраняйте этот файл при обновлении прошивки, чтобы не потерялись все ваши настройки. Старый файл конфигурации будет подходить ко всем новым версиям
 
 #define ENCODER_CLK         2
@@ -24,12 +28,17 @@
 #define KEYBOARD_PIN        0            // для подключения аналоговой клавиатуры на A0 необходимо перенести вывод дисплея DISPLAY_RS на другой пин, например, на 6
 
 
-#define THREAD_PITCH        1000         // шаг резьбы вала укладчика в мкм
+#define THREAD_PITCH        4000         // шаг резьбы вала укладчика в мкм
 
-#define DISPLAY_NCOL        20           // размер дисплея: ширина
-#define DISPLAY_NROW        4            // размер дисплея: высота
-#define DISPLAY_I2C         0            // использовать I2C подключение дисплея (1 - да, 0 - нет)
-#define DISPLAY_ADDRESS     0x27         // I2C адрес дисплея (0x27 для PCF8574T, 0x3F для PCF8574AT)
+//#define DISPLAY_NCOL        20           // размер дисплея: ширина
+//#define DISPLAY_NROW        4            // размер дисплея: высота
+//#define DISPLAY_I2C         0            // использовать I2C подключение дисплея (1 - да, 0 - нет)
+//#define DISPLAY_ADDRESS     0x27         // I2C адрес дисплея (0x27 для PCF8574T, 0x3F для PCF8574AT)
+
+#define DISPLAY_NCOL        14         // Nokia 5110: 14 символов
+#define DISPLAY_NROW        6          // Nokia 5110: 6 строк
+#define DISPLAY_I2C         0
+#define DISPLAY_ADDRESS     0x27
 
 #define STEPPER_Z_STEPS       200          // число шагов двигателя катушки на 1 оборот
 #define STEPPER_Z_MICROSTEPS  16           // делитель на плате драйвера двигателя катушки
@@ -48,5 +57,5 @@
 #define KEYBOARD_SELECT     350          // 5k2
 
 #define LANGUAGE            RU           // EN, RU
-//#define DEBUG
+#define DEBUG
 #define TRANSFORMER_COUNT   3            // 36 max
